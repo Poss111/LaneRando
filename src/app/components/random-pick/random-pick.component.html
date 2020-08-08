@@ -1,0 +1,12 @@
+<div>
+  <h1 class="header">Lane choices</h1>
+  <div *ngFor="let name of lanePickList; index as i; first as isFirst">
+    <span class="first opacity-zero" style="font-size: 50px;">{{name}} is going {{role[i]}}</span>
+  </div>
+
+  <h1 class="header">Who is picking for whom</h1>
+  <div *ngFor="let nameOne of pickOneList; index as i; first as isFirst">
+    <span class="second opacity-zero" style="font-size: 50px">{{nameOne}} is picking for {{pickTwoList[i]}}</span>
+  </div>
+
+</div>

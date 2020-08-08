@@ -16,7 +16,7 @@ export class RandomPickComponent {
 
 
   constructor() {
-    this.names = ['Ben', 'Jeff', 'Micah', 'Kathy', 'Dan'];
+    this.names = ['Ben', 'Jeff', 'Micah', 'Kathy', 'Nate'];
     this.role = ['Top', 'Mid', 'Bot', 'Supp', 'Jg'];
     this.lanePickList = this.shuffleArray(cloneDeep(this.names));
     this.pickOneList = this.shuffleArray(cloneDeep(this.names));

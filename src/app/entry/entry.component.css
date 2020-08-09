@@ -1,0 +1,23 @@
+.input-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.input-padding {
+  padding: 2em;
+}
+
+input {
+  font-size: 2em;
+}
+
+.button-padding {
+  padding: 2em;
+}
+
+button {
+  font-size: 4em;
+  background-color: aqua;
+  border-radius: 0.5em 0em;
+}

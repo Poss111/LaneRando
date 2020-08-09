@@ -10,7 +10,15 @@
   animation: 1s linear 500ms slidein-right forwards;
 }
 
+.button-padding {
+  padding: 2em;
+}
 
+button {
+  font-size: 4em;
+  background-color: aqua;
+  border-radius: 0.5em 0em;
+}
 
 @keyframes slidein-right {
   0% {

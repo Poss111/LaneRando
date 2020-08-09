@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as cloneDeep from 'lodash/cloneDeep';
+import {NamesService} from "../../names.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-random-pick',
   templateUrl: './random-pick.component.html',
   styleUrls: ['./random-pick.component.css']
 })
-export class RandomPickComponent {
+export class RandomPickComponent implements OnInit{
   names: string[];
   nameSetTwo: string[];
   lanePickList: string[];
@@ -15,12 +17,20 @@ export class RandomPickComponent {
   role: string[];
 
 
-  constructor() {
-    this.names = ['Ben', 'Jeff', 'Micah', 'Kathy', 'Nate'];
-    this.role = ['Top', 'Mid', 'Bot', 'Supp', 'Jg'];
-    this.lanePickList = this.shuffleArray(cloneDeep(this.names));
-    this.pickOneList = this.shuffleArray(cloneDeep(this.names));
-    this.pickTwoList = this.shuffleArrayWithUniqueness(cloneDeep(this.pickOneList));
+  constructor(private namesService : NamesService, private route: Router) {
+  }
+
+  ngOnInit(): void {
+    this.names = this.namesService.retrieveNames();
+    console.log(this.names);
+    if (this.names.length === 0) {
+      this.route.navigate(['/entry'])
+    } else {
+      this.role = ['Top', 'Mid', 'Bot', 'Supp', 'Jg'];
+      this.lanePickList = this.shuffleArray(cloneDeep(this.names));
+      this.pickOneList = this.shuffleArray(cloneDeep(this.names));
+      this.pickTwoList = this.shuffleArrayWithUniqueness(cloneDeep(this.pickOneList));
+    }
   }
 
   shuffleArray(array: string[]): string[] {

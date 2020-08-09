@@ -1,0 +1,21 @@
+<div class="input-container">
+  <h1> Hello! Welcome to Lane Rando. Please enter 5 names to randomize between.</h1>
+  <div class="input-padding">
+    <input type="text" placeholder="Name 1" [(ngModel)]="name1" (ngModelChange)="inputUpdate($event)">
+  </div>
+  <div class="input-padding">
+    <input type="text" placeholder="Name 2" [(ngModel)]="name2" (ngModelChange)="inputUpdate($event)">
+  </div>
+  <div class="input-padding">
+    <input type="text" placeholder="Name 3" [(ngModel)]="name3" (ngModelChange)="inputUpdate($event)">
+  </div>
+  <div class="input-padding">
+    <input type="text" placeholder="Name 4" [(ngModel)]="name4" (ngModelChange)="inputUpdate($event)">
+  </div>
+  <div class="input-padding">
+    <input type="text" placeholder="Name 5" [(ngModel)]="name5" (ngModelChange)="inputUpdate($event)">
+  </div>
+  <div class="button-padding">
+    <button (click)="clicked()" routerLink="/lane-rando" [disabled]="disabled">Randomize!</button>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./random-pick.component.css']
 })
 export class RandomPickComponent implements OnInit{
-  names: string[];
+  names: string[] = [];
   nameSetTwo: string[];
   lanePickList: string[];
   pickOneList: string[];
@@ -21,6 +21,10 @@ export class RandomPickComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.randomize();
+  }
+
+  randomize() {
     this.names = this.namesService.retrieveNames();
     console.log(this.names);
     if (this.names.length === 0) {
@@ -31,6 +35,16 @@ export class RandomPickComponent implements OnInit{
       this.pickOneList = this.shuffleArray(cloneDeep(this.names));
       this.pickTwoList = this.shuffleArrayWithUniqueness(cloneDeep(this.pickOneList));
     }
+  }
+
+  clickToRandomize() {
+    if (this.names.length != 0) {
+      this.lanePickList = [];
+      this.pickOneList = [];
+      this.pickTwoList = [];
+    }
+
+    setTimeout(() => this.randomize(), 10);
   }
 
   shuffleArray(array: string[]): string[] {

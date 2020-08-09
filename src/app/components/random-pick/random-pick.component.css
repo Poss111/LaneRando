@@ -10,6 +10,10 @@
   animation: 1s linear 500ms slidein-right forwards;
 }
 
+.text-item {
+  font-size: 3.125em;
+}
+
 .button-padding {
   padding: 2em;
 }
@@ -35,4 +39,8 @@ button {
 
 .opacity-zero {
   opacity: 0;
+}
+
+.list {
+ min-height: 17em;
 }

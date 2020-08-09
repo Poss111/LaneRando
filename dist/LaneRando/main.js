@@ -193,9 +193,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RandomPickComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+function RandomPickComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -206,9 +206,9 @@ function RandomPickComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("", name_r2, " is going ", ctx_r0.role[i_r3], "");
 } }
-function RandomPickComponent_div_6_Template(rf, ctx) { if (rf & 1) {
+function RandomPickComponent_div_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -223,8 +223,12 @@ class RandomPickComponent {
     constructor(namesService, route) {
         this.namesService = namesService;
         this.route = route;
+        this.names = [];
     }
     ngOnInit() {
+        this.randomize();
+    }
+    randomize() {
         this.names = this.namesService.retrieveNames();
         console.log(this.names);
         if (this.names.length === 0) {
@@ -236,6 +240,14 @@ class RandomPickComponent {
             this.pickOneList = this.shuffleArray(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__(this.names));
             this.pickTwoList = this.shuffleArrayWithUniqueness(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__(this.pickOneList));
         }
+    }
+    clickToRandomize() {
+        if (this.names.length != 0) {
+            this.lanePickList = [];
+            this.pickOneList = [];
+            this.pickTwoList = [];
+        }
+        setTimeout(() => this.randomize(), 10);
     }
     shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -251,28 +263,38 @@ class RandomPickComponent {
     }
 }
 RandomPickComponent.ɵfac = function RandomPickComponent_Factory(t) { return new (t || RandomPickComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_names_service__WEBPACK_IMPORTED_MODULE_2__["NamesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
-RandomPickComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RandomPickComponent, selectors: [["app-random-pick"]], decls: 10, vars: 2, consts: [[1, "header"], [4, "ngFor", "ngForOf"], [1, "button-padding"], ["routerLink", "/entry"], [1, "first", "opacity-zero", 2, "font-size", "50px"], [1, "second", "opacity-zero", 2, "font-size", "50px"]], template: function RandomPickComponent_Template(rf, ctx) { if (rf & 1) {
+RandomPickComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RandomPickComponent, selectors: [["app-random-pick"]], decls: 15, vars: 2, consts: [[1, "header"], [1, "list"], [4, "ngFor", "ngForOf"], [1, "button-padding"], [3, "click"], ["routerLink", "/entry"], [1, "first", "opacity-zero", "text-item"], [1, "second", "opacity-zero", "text-item"]], template: function RandomPickComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Lane choices");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, RandomPickComponent_div_3_Template, 3, 2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Who is picking for whom");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, RandomPickComponent_div_4_Template, 3, 2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, RandomPickComponent_div_6_Template, 3, 2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Start Over!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h1", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Who is picking for whom");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, RandomPickComponent_div_8_Template, 3, 2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RandomPickComponent_Template_button_click_10_listener() { return ctx.clickToRandomize(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Randomize!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Start Over!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.lanePickList);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.pickOneList);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLink"]], styles: [".header[_ngcontent-%COMP%] {\n  font-size: 4em;\n}\n\n.first[_ngcontent-%COMP%] {\n  animation: 1s linear 250ms slidein-right forwards;\n}\n\n.second[_ngcontent-%COMP%] {\n  animation: 1s linear 500ms slidein-right forwards;\n}\n\n.button-padding[_ngcontent-%COMP%] {\n  padding: 2em;\n}\n\nbutton[_ngcontent-%COMP%] {\n  font-size: 4em;\n  background-color: aqua;\n  border-radius: 0.5em 0em;\n}\n\n@keyframes slidein-right {\n  0% {\n    margin-left: -100%;\n    width: 300%;\n  }\n  50% {\n    margin-left: 100px;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n\n.opacity-zero[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yYW5kb20tcGljay9yYW5kb20tcGljay5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGlEQUFpRDtBQUNuRDs7QUFFQTtFQUNFLGlEQUFpRDtBQUNuRDs7QUFFQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGNBQWM7RUFDZCxzQkFBc0I7RUFDdEIsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0U7SUFDRSxrQkFBa0I7SUFDbEIsV0FBVztFQUNiO0VBQ0E7SUFDRSxrQkFBa0I7RUFDcEI7RUFDQTtJQUNFLFVBQVU7RUFDWjtBQUNGOztBQUVBO0VBQ0UsVUFBVTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yYW5kb20tcGljay9yYW5kb20tcGljay5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlciB7XG4gIGZvbnQtc2l6ZTogNGVtO1xufVxuXG4uZmlyc3Qge1xuICBhbmltYXRpb246IDFzIGxpbmVhciAyNTBtcyBzbGlkZWluLXJpZ2h0IGZvcndhcmRzO1xufVxuXG4uc2Vjb25kIHtcbiAgYW5pbWF0aW9uOiAxcyBsaW5lYXIgNTAwbXMgc2xpZGVpbi1yaWdodCBmb3J3YXJkcztcbn1cblxuLmJ1dHRvbi1wYWRkaW5nIHtcbiAgcGFkZGluZzogMmVtO1xufVxuXG5idXR0b24ge1xuICBmb250LXNpemU6IDRlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTtcbiAgYm9yZGVyLXJhZGl1czogMC41ZW0gMGVtO1xufVxuXG5Aa2V5ZnJhbWVzIHNsaWRlaW4tcmlnaHQge1xuICAwJSB7XG4gICAgbWFyZ2luLWxlZnQ6IC0xMDAlO1xuICAgIHdpZHRoOiAzMDAlO1xuICB9XG4gIDUwJSB7XG4gICAgbWFyZ2luLWxlZnQ6IDEwMHB4O1xuICB9XG4gIDEwMCUge1xuICAgIG9wYWNpdHk6IDE7XG4gIH1cbn1cblxuLm9wYWNpdHktemVybyB7XG4gIG9wYWNpdHk6IDA7XG59XG4iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLink"]], styles: [".header[_ngcontent-%COMP%] {\n  font-size: 4em;\n}\n\n.first[_ngcontent-%COMP%] {\n  animation: 1s linear 250ms slidein-right forwards;\n}\n\n.second[_ngcontent-%COMP%] {\n  animation: 1s linear 500ms slidein-right forwards;\n}\n\n.text-item[_ngcontent-%COMP%] {\n  font-size: 3.125em;\n}\n\n.button-padding[_ngcontent-%COMP%] {\n  padding: 2em;\n}\n\nbutton[_ngcontent-%COMP%] {\n  font-size: 4em;\n  background-color: aqua;\n  border-radius: 0.5em 0em;\n}\n\n@keyframes slidein-right {\n  0% {\n    margin-left: -100%;\n    width: 300%;\n  }\n  50% {\n    margin-left: 100px;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n\n.opacity-zero[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n\n.list[_ngcontent-%COMP%] {\n min-height: 17em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yYW5kb20tcGljay9yYW5kb20tcGljay5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGlEQUFpRDtBQUNuRDs7QUFFQTtFQUNFLGlEQUFpRDtBQUNuRDs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGNBQWM7RUFDZCxzQkFBc0I7RUFDdEIsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0U7SUFDRSxrQkFBa0I7SUFDbEIsV0FBVztFQUNiO0VBQ0E7SUFDRSxrQkFBa0I7RUFDcEI7RUFDQTtJQUNFLFVBQVU7RUFDWjtBQUNGOztBQUVBO0VBQ0UsVUFBVTtBQUNaOztBQUVBO0NBQ0MsZ0JBQWdCO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yYW5kb20tcGljay9yYW5kb20tcGljay5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlciB7XG4gIGZvbnQtc2l6ZTogNGVtO1xufVxuXG4uZmlyc3Qge1xuICBhbmltYXRpb246IDFzIGxpbmVhciAyNTBtcyBzbGlkZWluLXJpZ2h0IGZvcndhcmRzO1xufVxuXG4uc2Vjb25kIHtcbiAgYW5pbWF0aW9uOiAxcyBsaW5lYXIgNTAwbXMgc2xpZGVpbi1yaWdodCBmb3J3YXJkcztcbn1cblxuLnRleHQtaXRlbSB7XG4gIGZvbnQtc2l6ZTogMy4xMjVlbTtcbn1cblxuLmJ1dHRvbi1wYWRkaW5nIHtcbiAgcGFkZGluZzogMmVtO1xufVxuXG5idXR0b24ge1xuICBmb250LXNpemU6IDRlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTtcbiAgYm9yZGVyLXJhZGl1czogMC41ZW0gMGVtO1xufVxuXG5Aa2V5ZnJhbWVzIHNsaWRlaW4tcmlnaHQge1xuICAwJSB7XG4gICAgbWFyZ2luLWxlZnQ6IC0xMDAlO1xuICAgIHdpZHRoOiAzMDAlO1xuICB9XG4gIDUwJSB7XG4gICAgbWFyZ2luLWxlZnQ6IDEwMHB4O1xuICB9XG4gIDEwMCUge1xuICAgIG9wYWNpdHk6IDE7XG4gIH1cbn1cblxuLm9wYWNpdHktemVybyB7XG4gIG9wYWNpdHk6IDA7XG59XG5cbi5saXN0IHtcbiBtaW4taGVpZ2h0OiAxN2VtO1xufVxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RandomPickComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{

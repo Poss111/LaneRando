@@ -11,6 +11,12 @@ export class NamesService {
 
   persistNames(values: string[]): void {
     this.names = values;
+    const value = localStorage.getItem('setNames');
+    let array = values;
+    if (value) {
+      array = values.concat(Array.from(JSON.parse(value)));
+    }
+    localStorage.setItem('setNames', JSON.stringify(Array.from(new Set(array))));
   }
 
   retrieveNames(): string[] {
@@ -18,6 +24,7 @@ export class NamesService {
   }
 
   retrieveSetOfNames(): Set<string> {
-    return new Set(this.names);
+    const set = new Set<string>(JSON.parse(localStorage.getItem('setNames')));
+    return set;
   }
 }

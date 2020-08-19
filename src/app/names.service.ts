@@ -9,11 +9,15 @@ export class NamesService {
 
   constructor() { }
 
-  persistNames(values: string[]) {
+  persistNames(values: string[]): void {
     this.names = values;
   }
 
-  retrieveNames() : string[] {
+  retrieveNames(): string[] {
     return this.names;
+  }
+
+  retrieveSetOfNames(): Set<string> {
+    return new Set(this.names);
   }
 }

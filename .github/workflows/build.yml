@@ -38,7 +38,7 @@ jobs:
     - name: Install Dependencies
       run:
         npm i
-        npm coverage
+        npm test
 
     - name: Build
       run: npm build

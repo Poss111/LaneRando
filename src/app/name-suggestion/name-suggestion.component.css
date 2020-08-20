@@ -1,0 +1,44 @@
+.main-box {
+  padding: 0.5em;
+  background-color: #00965f;
+  border-radius: 1em;
+  max-width: 234px;
+  min-width: 234px;
+}
+
+.inner-box {
+  padding: 1em;
+  background-color: #00d389;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.row-box {
+  padding: 0.15em;
+  background-color: beige;
+  margin: 1em 0.5em 1em 0;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.content-box-items {
+  overflow-y: scroll;
+  max-height: 205px;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  font-size: 1em;
+  background-color: aqua;
+  border-radius: 0.5em 0;
+}
+
+.inner-button-box {
+  align-self: flex-end;
+  padding-top: 5px;
+}

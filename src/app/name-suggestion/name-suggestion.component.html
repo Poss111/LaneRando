@@ -1,0 +1,20 @@
+<div class="main-box">
+  <div class="inner-box">
+    <h1>Suggested Names</h1>
+    <div *ngIf="showNa; else showSuggestions">
+      <p>No suggestions found</p>
+    </div>
+    <ng-template #showSuggestions>
+      <div class="content-box">
+        <div class="content-box-items">
+          <div class="row-box" *ngFor="let name of nameSuggestions; index as i; first as isFirst">
+            <div>{{name}}</div>
+          </div>
+        </div>
+        <div class="inner-button-box">
+          <button (click)="clearSuggestions()">Reset Names</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

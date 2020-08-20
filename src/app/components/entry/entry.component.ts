@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {NamesService} from '../names.service';
+import {NamesService} from '../../names.service';
 
 @Component({
   selector: 'app-entry',

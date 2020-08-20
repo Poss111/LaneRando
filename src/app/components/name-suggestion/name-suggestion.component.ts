@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NamesService} from '../names.service';
+import {NamesService} from '../../names.service';
 
 @Component({
   selector: 'app-name-suggestion',

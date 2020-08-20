@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RandomPickComponent } from './random-pick.component';
 import { routes} from 'src/src/app/app-routing.module';
 import {RouterTestingModule} from 'src/node_modules/@angular/router/testing';
-import {EntryComponent} from 'src/src/app/entry/entry.component';
 import {NO_ERRORS_SCHEMA} from 'src/node_modules/@angular/core';
+import {EntryComponent} from 'src/src/app/components/entry/entry.component';
 
 describe('RandomPickComponent', () => {
   let component: RandomPickComponent;

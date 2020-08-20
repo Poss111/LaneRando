@@ -38,7 +38,6 @@ describe('NameSuggestionComponent', () => {
     expect(component.nameSuggestions).toEqual(array.sort((a, b) => {
       return a.toLowerCase().localeCompare(b.toLowerCase());
     }));
-    console.log(array);
   });
 
   it('should show no records if there are suggestions are undefined', () => {

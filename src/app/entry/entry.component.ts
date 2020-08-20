@@ -27,7 +27,6 @@ export class EntryComponent implements OnInit {
 
   clicked(): void {
     this.names.push(this.name1.trim(), this.name2.trim(), this.name3.trim(), this.name4.trim(), this.name5.trim());
-    console.log(this.names);
     this.nameService.persistNames(this.names);
   }
 

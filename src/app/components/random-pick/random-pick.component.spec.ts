@@ -1,7 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomPickComponent } from './random-pick.component';
-import * as cloneDeep from 'lodash.cloneDeep';
+import { routes} from 'src/src/app/app-routing.module';
+import {RouterTestingModule} from 'src/node_modules/@angular/router/testing';
+import {EntryComponent} from 'src/src/app/entry/entry.component';
+import {NO_ERRORS_SCHEMA} from 'src/node_modules/@angular/core';
 
 describe('RandomPickComponent', () => {
   let component: RandomPickComponent;
@@ -9,7 +12,9 @@ describe('RandomPickComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RandomPickComponent ]
+      imports: [RouterTestingModule.withRoutes(routes) ],
+      declarations: [ RandomPickComponent, EntryComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -22,13 +27,5 @@ describe('RandomPickComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should shift the array twice if called', () => {
-    const array = [1, 2, 3, 4, 5];
-    const expectedArray = cloneDeep(array);
-    expectedArray.push(expectedArray.shift());
-    expectedArray.push(expectedArray.shift());
-    expect(component.shuffleArrayWithUniqueness(cloneDeep(array))).toEqual(expectedArray);
   });
 });

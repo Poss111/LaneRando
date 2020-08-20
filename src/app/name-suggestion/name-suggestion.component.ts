@@ -14,7 +14,6 @@ export class NameSuggestionComponent implements OnInit {
   constructor(private namesService: NamesService) { }
 
   ngOnInit(): void {
-    console.log(this.nameSuggestions);
     if (!this.nameSuggestions || this.nameSuggestions.length === 0) {
       this.showNa = true;
     } else {

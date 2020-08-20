@@ -33,9 +33,9 @@ jobs:
     - name: Zip-Artifact
       run: zip build-artifact.zip -r dist/LaneRando
 
-    - name: Upload artifact from node build
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: build-artifact.zip
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: build-artifact.zip
 

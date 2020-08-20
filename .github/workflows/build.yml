@@ -42,7 +42,7 @@ jobs:
       run: npm test
 
 
-    -name: Folder Structure
+    - name: Folder Structure
       run: ls -ltr
 
     - name: Build

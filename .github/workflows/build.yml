@@ -48,6 +48,11 @@ jobs:
     - name: Build
       run: npm build
 
+    - name: Copy to docs
+      run:
+        mkdir docs
+        cp dist/LaneRando docs
+
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact

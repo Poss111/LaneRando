@@ -30,12 +30,8 @@ jobs:
     - name: Build
       run: npm build
 
-    - name: Zip-Artifact
-      run: zip build-artifact.zip -r dist/LaneRando
-
-
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact
-        path: build-artifact.zip
+        path: dist/LaneRando
 

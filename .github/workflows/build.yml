@@ -55,6 +55,6 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: build-artifact
+        name: coverage-artifact
         path: coverage
 

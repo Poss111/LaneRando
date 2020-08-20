@@ -1,21 +1,42 @@
-<div class="input-container">
-  <h1> Hello! Welcome to Lane Rando. Please enter 5 names to randomize between.</h1>
-  <div class="input-padding">
-    <input type="text" placeholder="Name 1" [(ngModel)]="name1" (ngModelChange)="inputUpdate($event)">
+<div class="page-container">
+  <div class="entry-component-title-block">
+    <h1>Hello! Welcome to Lane Rando. Please enter 5 names to randomize between.</h1>
   </div>
-  <div class="input-padding">
-    <input type="text" placeholder="Name 2" [(ngModel)]="name2" (ngModelChange)="inputUpdate($event)">
-  </div>
-  <div class="input-padding">
-    <input type="text" placeholder="Name 3" [(ngModel)]="name3" (ngModelChange)="inputUpdate($event)">
-  </div>
-  <div class="input-padding">
-    <input type="text" placeholder="Name 4" [(ngModel)]="name4" (ngModelChange)="inputUpdate($event)">
-  </div>
-  <div class="input-padding">
-    <input type="text" placeholder="Name 5" [(ngModel)]="name5" (ngModelChange)="inputUpdate($event)">
-  </div>
-  <div class="button-padding">
-    <button (click)="clicked()" routerLink="/lane-rando" [disabled]="disabled">Randomize!</button>
+  <div class="entry-component-content-blocks">
+    <div class="entry-component-name-suggestions-block">
+      <app-name-suggestion [nameSuggestions]="setOfNames"></app-name-suggestion>
+    </div>
+    <div class="entry-container">
+      <div class="input-container">
+        <div class="input-padding">
+          <label>
+            <input type="text" placeholder="Name 1" [(ngModel)]="name1" (ngModelChange)="inputUpdate()">
+          </label>
+        </div>
+        <div class="input-padding">
+          <label>
+            <input type="text" placeholder="Name 2" [(ngModel)]="name2" (ngModelChange)="inputUpdate()">
+          </label>
+        </div>
+        <div class="input-padding">
+          <label>
+            <input type="text" placeholder="Name 3" [(ngModel)]="name3" (ngModelChange)="inputUpdate()">
+          </label>
+        </div>
+        <div class="input-padding">
+          <label>
+            <input type="text" placeholder="Name 4" [(ngModel)]="name4" (ngModelChange)="inputUpdate()">
+          </label>
+        </div>
+        <div class="input-padding">
+          <label>
+            <input type="text" placeholder="Name 5" [(ngModel)]="name5" (ngModelChange)="inputUpdate()">
+          </label>
+        </div>
+        <div class="button-padding">
+          <button (click)="clicked()" routerLink="/lane-rando" [disabled]="disabled">Randomize!</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

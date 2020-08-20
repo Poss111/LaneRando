@@ -3,4 +3,19 @@ body {
   font-family: 'Bangers', cursive;
   width: 100%;
   background: beige;
+  min-width: 725px;
+}
+div::-webkit-scrollbar {
+  width: 1em;
+}
+
+div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #02ffa2;
+  border: 2em solid #00ea94;
+  border-radius: 5em;
+  outline: 5px solid slategrey;
 }

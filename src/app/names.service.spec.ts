@@ -49,4 +49,11 @@ describe('NamesService', () => {
     expect(service.retrieveSetOfNames()).toEqual(new Set<string>(array));
     expect(new Set<string>(JSON.parse(localStorage.getItem('setNames')))).toEqual(new Set<string>(array));
   });
+
+  it('should clear set of names from localstorage when called', () => {
+    const array: string[] = ['value1', 'value2', 'value2'];
+    localStorage.setItem('setNames', JSON.stringify(Array.from(new Set(array))));
+    service.clearSetOfNames();
+    expect(localStorage.getItem('setNames')).toEqual(null);
+  });
 });

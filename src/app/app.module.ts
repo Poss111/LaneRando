@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RandomPickComponent } from './components/random-pick/random-pick.component';
 import { EntryComponent } from './entry/entry.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
+import { NameSuggestionComponent } from './name-suggestion/name-suggestion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RandomPickComponent,
-    EntryComponent
+    EntryComponent,
+    NameSuggestionComponent
   ],
     imports: [
         BrowserModule,

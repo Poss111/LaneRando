@@ -8,16 +8,41 @@
   padding: 2em;
 }
 
-input {
-  font-size: 2em;
+.entry-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.entry-component-title-block {
+  text-align: center;
 }
 
 .button-padding {
   padding: 2em;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entry-component-content-blocks {
+  display: flex;
+}
+
+.entry-component-name-suggestions-block {
+  align-self: center;
+  margin-bottom: 250px;
+}
+
+input {
+  font-size: 2em;
+}
+
 button {
   font-size: 4em;
   background-color: aqua;
-  border-radius: 0.5em 0em;
+  border-radius: 0.5em 0;
 }

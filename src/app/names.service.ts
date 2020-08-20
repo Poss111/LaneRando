@@ -24,7 +24,10 @@ export class NamesService {
   }
 
   retrieveSetOfNames(): Set<string> {
-    const set = new Set<string>(JSON.parse(localStorage.getItem('setNames')));
-    return set;
+    return new Set<string>(JSON.parse(localStorage.getItem('setNames')));
+  }
+
+  clearSetOfNames(): void {
+    localStorage.removeItem('setNames');
   }
 }

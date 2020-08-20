@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, NavigationExtras, Params} from "@angular/router";
-import {NamesService} from "../names.service";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {NamesService} from '../names.service';
 
 @Component({
   selector: 'app-entry',
@@ -14,32 +14,29 @@ export class EntryComponent implements OnInit {
   name4: string;
   name5: string;
   names: string[] = [];
-  disabled: boolean = true;
+  disabled = true;
+  setOfNames: string[];
 
   constructor(
-    private route: ActivatedRoute, private nameService : NamesService) { }
-
-  ngOnInit(): void {
+    private route: ActivatedRoute, private nameService: NamesService) {
   }
 
-  clicked() {
+  ngOnInit(): void {
+    this.setOfNames = Array.from(this.nameService.retrieveSetOfNames());
+  }
+
+  clicked(): void {
     this.names.push(this.name1.trim(), this.name2.trim(), this.name3.trim(), this.name4.trim(), this.name5.trim());
     console.log(this.names);
     this.nameService.persistNames(this.names);
   }
 
-  inputUpdate($event: any) {
-    if (
-      this.name1 &&
+  inputUpdate(): void {
+    this.disabled = !(this.name1 &&
       this.name2 &&
       this.name3 &&
       this.name4 &&
-      this.name5
-    ) {
-      this.disabled = false;
-    } else {
-      this.disabled = true
-    }
+      this.name5);
   }
 
 }

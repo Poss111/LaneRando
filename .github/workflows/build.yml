@@ -46,7 +46,10 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact
-        path:
-          dist
-          coverage
+        path: dist
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: coverage
 

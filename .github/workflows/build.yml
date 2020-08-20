@@ -52,4 +52,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: master # The branch the action should deploy to.
-        FOLDER: dist/LaneRando # The folder the action should deploy.
+        FOLDER: dist # The folder the action should deploy.

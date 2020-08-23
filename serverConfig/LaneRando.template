@@ -311,7 +311,7 @@
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
-                    "id": "c759e223-47bb-4081-9337-8928282ca678"
+                    "id":    "c759e223-47bb-4081-9337-8928282ca678"
                 }
             }
         },
@@ -376,8 +376,17 @@
                             "",
                             [
                                 "#!/bin/bash -xe\n",
-                                "yum install -y aws-cfn-bootstrap\n",
                                 "# Install the files and packages from the metadata\n",
+                                "cd /home/ubuntu\n",
+                                "git clone https://github.com/Poss111/LaneRando.git\n",
+                                "cd /home/ubuntu/LaneRando\n",
+                                "apt-get -y install nodejs\n",
+                                "npm build --prod\n",
+                                "curl --silent --location https://rpm.nodesource.com/setup_6.x\n",
+                                "apt-get update\n",
+                                "apt-get -y install nginx\n",
+                                "cp /home/ubuntu/LaneRando/serverConfig/server.conf /etc/nginx/conf.d/server1.conf\n",
+                                "service nginx start\n",
                                 "/opt/aws/bin/cfn-init -v ",
                                 "         --stack ",
                                 {

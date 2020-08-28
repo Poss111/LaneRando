@@ -376,16 +376,10 @@
                             "",
                             [
                                 "#!/bin/bash -xe\n",
-                                "# Install the files and packages from the metadata\n",
-                                "cd /home/ubuntu\n",
-                                "git clone https://github.com/Poss111/LaneRando.git\n",
-                                "cd /home/ubuntu/LaneRando\n",
-                                "apt-get -y install nodejs\n",
-                                "npm build --prod\n",
-                                "curl --silent --location https://rpm.nodesource.com/setup_6.x\n",
                                 "apt-get update\n",
-                                "apt-get -y install nginx\n",
-                                "cp /home/ubuntu/LaneRando/serverConfig/server.conf /etc/nginx/conf.d/server1.conf\n",
+                                "apt install -y docker.io\n",
+                                { "Fn::Sub": [ "docker pull ${imageName}\n", { "imageName": {"Ref" : "UIImageName"}}]},
+                                { "Fn::Sub": [ "docker run -d -it -p 80:80/tcp --name lane-rando ${imageName}\n", { "imageName": {"Ref" : "UIImageName"}}]},
                                 "service nginx start\n",
                                 "/opt/aws/bin/cfn-init -v ",
                                 "         --stack ",
@@ -539,6 +533,12 @@
                 "t2.micro"
             ],
             "ConstraintDescription": "must be a valid EC2 instance type."
+        },
+        "UIImageName": {
+            "Description": "UI Image to deploy to EC2 instance",
+            "Type": "String",
+            "Default": "poss11111/lane-rando-ui",
+            "ConstraintDescription": "must be a valid image name."
         },
         "KeyName": {
             "Description": "Name of an EC2 KeyPair to enable SSH access to the instance.",

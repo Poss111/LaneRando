@@ -54,3 +54,9 @@ jobs:
       with:
         name: coverage-artifact
         path: coverage
+
+    - uses: joelwmale/webhook-action@master
+      with:
+        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        headers: '{"Content-Type": "application/json"}'
+        body: '{"username": "Dan Bot", "avatar_url": "", "content": "New version of Lane Rando has been deployed."}'

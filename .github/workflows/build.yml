@@ -37,7 +37,7 @@ jobs:
     - name: Build
       run: npm build --prod
 
-    - name: Build Docker Image
+    - name: Build Docker Image $GITHUB_RUN_NUMBER
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}

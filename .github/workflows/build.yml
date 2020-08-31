@@ -17,7 +17,7 @@ jobs:
       with:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         headers: '{"Content-Type": "application/json"}'
-        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"content\": \"Starting Lane Rando Build # ${{ github.run_id }} sha ${{ github.sha }}.....\"}"
+        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"content\": \"Starting Lane Rando \n Build # ${{ github.run_id }} \n SHA ${{ github.sha }}.....\"}"
 
     - name: Check
       run : echo build $GITHUB_RUN_NUMBER

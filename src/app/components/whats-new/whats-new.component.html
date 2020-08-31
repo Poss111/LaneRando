@@ -1,0 +1,12 @@
+<div class="overlay" (click)="hideModal()" *ngIf="showOverlay"></div>
+<div class="modal-container" *ngIf="showOverlay">
+  <div class="outer-box">
+    <div class="inner-box">
+      <div class="text-container">
+        <h2>New Functionality!</h2>
+        <p>- Name suggestion items are now clickable and will populate any empty box.</p>
+      </div>
+      <h2>Click anywhere outside this box to dismiss</h2>
+    </div>
+  </div>
+</div>

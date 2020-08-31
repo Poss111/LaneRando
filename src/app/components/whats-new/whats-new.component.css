@@ -1,0 +1,45 @@
+.outer-box {
+  padding: 1em;
+  background-color: aquamarine;
+  border-radius: 1em;
+  width: 25em;
+}
+
+.inner-box {
+  background-color: aqua;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.text-container {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 1em;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 15em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.modal-container {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  width: auto;
+  margin-left: -187.5px;
+  text-align: center;
+  z-index: 100;
+}
+
+p {
+  text-align: left;
+}

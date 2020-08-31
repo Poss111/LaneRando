@@ -7,13 +7,15 @@ import { RandomPickComponent } from './components/random-pick/random-pick.compon
 import { EntryComponent } from './components/entry/entry.component';
 import {FormsModule} from '@angular/forms';
 import { NameSuggestionComponent } from './components/name-suggestion/name-suggestion.component';
+import { WhatsNewComponent } from './components/whats-new/whats-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RandomPickComponent,
     EntryComponent,
-    NameSuggestionComponent
+    NameSuggestionComponent,
+    WhatsNewComponent
   ],
     imports: [
         BrowserModule,

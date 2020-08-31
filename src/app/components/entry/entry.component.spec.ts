@@ -68,4 +68,15 @@ describe('EntryComponent', () => {
     component.populateSuggestedName(input);
     expect(component.name5).toEqual(input);
   });
+
+  it('should populate suggested name in name4 if box is null and name1, name2, name3, and name5 are populated', () => {
+    const input = 'test';
+    component.name1 = 'populated';
+    component.name2 = 'populated';
+    component.name3 = 'populated';
+    component.name5 = 'populated';
+    component.populateSuggestedName(input);
+    expect(component.name4).toEqual(input);
+    expect(component.name5).not.toEqual(input);
+  });
 });

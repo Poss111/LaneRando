@@ -17,8 +17,7 @@ jobs:
       with:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         headers: '{"Content-Type": "application/json"}'
-
-        body: "{  \"username\": \"Dan Bot\",  \"avatar_url\": \"\",  \"content\": \"Lane Rando is up.\",  \"embeds\": [    {      \"author\": {\"name\": \"Github\",\"url\": \"https://github.com/Poss111/LaneRando\",\"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"      },      \"title\": \"Lane Rando Deployment Notification\",      \"url\": \"https://google.com/\",      \"description\": \"Starting Github build...\",      \"color\": 15258703,      \"fields\": [{  \"name\": \"Build #\",  \"value\": \"${{ github.run_id }}\",  \"inline\": true},{  \"name\": \"Branch\",  \"value\": \"${{ github.ref }}\",  \"inline\": true}, { \"name\": \"SHA\", \"value\": \"${{ github.sha }}\", \"inline\": false},{  \"name\": \"Triggered By\",  \"value\": \"${{ github.actor }}\",  \"inline\": false}      ]    }  ]}"
+        body: "{  \"username\": \"Dan Bot\", \"avatar_url\": \"\", \"embeds\": [{ \"author\": {\"name\": \"Github\",\"url\": \"https://github.com/Poss111/LaneRando\",\"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"      },      \"title\": \"Lane Rando Deployment Notification\",      \"url\": \"https://google.com/\",      \"description\": \"Starting Github build...\",      \"color\": 15258703,      \"fields\": [{  \"name\": \"Build #\",  \"value\": \"${{ github.run_id }}\",  \"inline\": true},{  \"name\": \"Branch\",  \"value\": \"${{ github.ref }}\",  \"inline\": true}, { \"name\": \"SHA\", \"value\": \"${{ github.sha }}\", \"inline\": false},{  \"name\": \"Triggered By\",  \"value\": \"${{ github.actor }}\",  \"inline\": false}      ]    }  ]}"
 
     - name: Check
       run : echo build $GITHUB_RUN_NUMBER
@@ -71,4 +70,4 @@ jobs:
       with:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         headers: '{"Content-Type": "application/json"}'
-        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"content\": \"New version of Lane Rando has been deployed for Build # ${{ github.run_id }} sha ${{ github.sha }}.\"}"
+        body: "{\"username\": \"Dan Bot\",\"avatar_url\": \"\",\"embeds\": [{\"author\": {\"name\": \"Github\",\"url\": \"https://github.com/Poss111/LaneRando\",\"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"},\"title\": \"Lane Rando Deployment Notification\",\"url\": \"https://google.com/\",\"description\": \"Github build completed!\",\"color\": 65345,\"fields\": [{\"name\": \"Build #\",\"value\": \"${{ github.run_id }}\",\"inline\": true},{\"name\": \"Branch\",\"value\": \"${{ github.ref }}\",\"inline\": true},{\"name\": \"SHA\",\"value\": \"${{ github.sha }}\",\"inline\": false},{\"name\": \"Triggered By\",\"value\": \"${{ github.actor }}\",\"inline\": false}]}]}"

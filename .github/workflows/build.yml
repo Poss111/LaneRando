@@ -11,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
     - uses: FranzDiebold/github-env-vars-action@v1.2.0
+
+    - uses: joelwmale/webhook-action@master
+      with:
+        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        headers: '{"Content-Type": "application/json"}'
+        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"content\": \"Starting Lane Rando Build # $GITHUB_RUN_NUMBER sha $GITHUB_SHA.....\"}"
+
+    - uses: actions/checkout@v2
 
     - name: Cache node modules
       uses: actions/cache@v2

@@ -66,8 +66,19 @@ jobs:
         name: coverage-artifact
         path: coverage
 
-    - uses: joelwmale/webhook-action@master
+    - name: Send failure webhook
+      uses: joelwmale/webhook-action@master
+      if: ${{ failure() }}
       with:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         headers: '{"Content-Type": "application/json"}'
-        body: "{\"username\": \"Dan Bot\",\"avatar_url\": \"\",\"embeds\": [{\"author\": {\"name\": \"Github\",\"url\": \"https://github.com/Poss111/LaneRando\",\"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"},\"title\": \"Lane Rando Deployment Notification\",\"url\": \"https://github.com/Poss111/LaneRando/actions/runs/${{ github.run_id }}\",\"description\": \"Github build completed!\",\"color\": 65345,\"fields\": [{\"name\": \"Build #\",\"value\": \"${{ github.run_id }}\",\"inline\": true},{\"name\": \"Branch\",\"value\": \"${{ github.ref }}\",\"inline\": true},{\"name\": \"SHA\",\"value\": \"${{ github.sha }}\",\"inline\": false},{\"name\": \"Triggered By\",\"value\": \"${{ github.actor }}\",\"inline\": false}]}]}"
+        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"embeds\": [{\"author\": {\"name\": \"Github\", \"url\": \"https://github.com/Poss111/LaneRando\", \"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"}, \"title\": \"Lane Rando Deployment Notification\", \"url\": \"https://github.com/Poss111/LaneRando/actions/runs/${{ github.run_id }}\", \"description\": \"Github build failed!\", \"color\": 16711680, \"fields\": [{\"name\": \"Build #\", \"value\": \"${{ github.run_id }}\", \"inline\": true}, {\"name\": \"Branch\", \"value\": \"${{ github.ref }}\", \"inline\": true}, {\"name\": \"SHA\", \"value\": \"${{ github.sha }}\", \"inline\": false}, {\"name\": \"Triggered By\", \"value\": \"${{ github.actor }}\", \"inline\": false}]}]}"
+
+
+    - name: Send success webhook
+      uses: joelwmale/webhook-action@master
+      if: ${{ success() }}
+      with:
+        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        headers: '{"Content-Type": "application/json"}'
+        body: "{\"username\": \"Dan Bot\", \"avatar_url\": \"\", \"embeds\": [{\"author\": {\"name\": \"Github\", \"url\": \"https://github.com/Poss111/LaneRando\", \"icon_url\": \"https://img.icons8.com/ios-filled/344/github-2.png\"}, \"title\": \"Lane Rando Deployment Notification\", \"url\": \"https://github.com/Poss111/LaneRando/actions/runs/${{ github.run_id }}\", \"description\": \"Github build succeeded!\", \"color\": 65345, \"fields\": [{\"name\": \"Build #\", \"value\": \"${{ github.run_id }}\", \"inline\": true}, {\"name\": \"Branch\", \"value\": \"${{ github.ref }}\", \"inline\": true}, {\"name\": \"SHA\", \"value\": \"${{ github.sha }}\", \"inline\": false}, {\"name\": \"Triggered By\", \"value\": \"${{ github.actor }}\", \"inline\": false}]}]}"

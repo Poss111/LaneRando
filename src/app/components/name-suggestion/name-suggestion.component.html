@@ -7,7 +7,7 @@
     <ng-template #showSuggestions>
       <div class="content-box">
         <div class="content-box-items">
-          <div class="row-box" *ngFor="let name of nameSuggestions; index as i; first as isFirst">
+          <div class="row-box" *ngFor="let name of nameSuggestions; index as i; first as isFirst" (click)="clickName($event)">
             <div>{{name}}</div>
           </div>
         </div>

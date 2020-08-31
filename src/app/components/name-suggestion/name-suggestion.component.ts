@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NamesService} from '../../names.service';
 
 @Component({
@@ -10,6 +10,8 @@ export class NameSuggestionComponent implements OnInit {
   @Input()
   nameSuggestions: string[] = [];
   showNa = false;
+  @Output()
+  nameSuggested = new EventEmitter<string>();
 
   constructor(private namesService: NamesService) { }
 
@@ -28,5 +30,9 @@ export class NameSuggestionComponent implements OnInit {
     this.nameSuggestions = [];
     this.namesService.clearSetOfNames();
     this.showNa = true;
+  }
+
+  clickName(event): void {
+    this.nameSuggested.emit(event.target.textContent);
   }
 }

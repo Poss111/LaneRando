@@ -38,4 +38,18 @@ export class EntryComponent implements OnInit {
       this.name5);
   }
 
+  populateSuggestedName(suggestedName: string): void {
+    if (!this.name1) {
+      this.name1 = suggestedName;
+    } else if (!this.name2) {
+      this.name2 = suggestedName;
+    } else if (!this.name3) {
+      this.name3 = suggestedName;
+    } else if (!this.name4) {
+      this.name4 = suggestedName;
+    } else if (!this.name5) {
+      this.name5 = suggestedName;
+    }
+    this.inputUpdate();
+  }
 }

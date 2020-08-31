@@ -50,4 +50,17 @@ describe('NameSuggestionComponent', () => {
     component.clearSuggestions();
     expect(component.nameSuggestions.length).toEqual(0);
   });
+
+  it('should collect name from clicked element', () => {
+    spyOn(component.nameSuggested, 'emit');
+
+    const event = {
+      target: {
+        textContent: 'someName'
+      }
+    };
+    component.clickName(event);
+    expect(component.nameSuggested.emit).toBeCalledTimes(1);
+    expect(component.nameSuggested.emit).toBeCalledWith(event.target.textContent);
+  });
 });

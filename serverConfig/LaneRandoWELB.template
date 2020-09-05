@@ -4,14 +4,14 @@
     "AWS::CloudFormation::Designer": {
       "c759e223-47bb-4081-9337-8928282ca678": {
         "size": {
-          "width": 490,
-          "height": 280
+          "width": 960,
+          "height": 660
         },
         "position": {
-          "x": -110,
-          "y": 100
+          "x": 120,
+          "y": 90
         },
-        "z": 0,
+        "z": 1,
         "embeds": [
           "709d614a-7430-4c7a-9bde-aae66e1613f8",
           "85f12cd5-653e-4225-96fa-a3f6f230c318",
@@ -20,19 +20,21 @@
       },
       "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8": {
         "size": {
-          "width": 140,
-          "height": 170
+          "width": 390,
+          "height": 330
         },
         "position": {
-          "x": -70,
-          "y": 130
+          "x": 180,
+          "y": 120
         },
-        "z": 1,
+        "z": 2,
         "parent": "c759e223-47bb-4081-9337-8928282ca678",
         "embeds": [
           "55bb07d9-c2f7-4857-89cf-e5d3ffbc8a92"
         ],
         "iscontainedinside": [
+          "c759e223-47bb-4081-9337-8928282ca678",
+          "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
@@ -79,13 +81,15 @@
           "height": 60
         },
         "position": {
-          "x": -40,
-          "y": 160
+          "x": 330,
+          "y": 180
         },
-        "z": 2,
+        "z": 3,
         "parent": "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
         "embeds": [],
         "iscontainedinside": [
+          "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
+          "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
           "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
           "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
           "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8",
@@ -134,13 +138,15 @@
           "height": 60
         },
         "position": {
-          "x": 100,
-          "y": 140
+          "x": 330,
+          "y": 150
         },
-        "z": 1,
+        "z": 2,
         "parent": "c759e223-47bb-4081-9337-8928282ca678",
         "embeds": [],
         "iscontainedinside": [
+          "c759e223-47bb-4081-9337-8928282ca678",
+          "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
@@ -181,19 +187,21 @@
       },
       "709d614a-7430-4c7a-9bde-aae66e1613f8": {
         "size": {
-          "width": 140,
-          "height": 122.94429506508237
+          "width": 390,
+          "height": 270
         },
         "position": {
-          "x": 210,
+          "x": 450,
           "y": 240
         },
-        "z": 1,
+        "z": 2,
         "parent": "c759e223-47bb-4081-9337-8928282ca678",
         "embeds": [
           "0245b503-f5ff-460c-ba04-30d7343f897c"
         ],
         "iscontainedinside": [
+          "c759e223-47bb-4081-9337-8928282ca678",
+          "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
           "c759e223-47bb-4081-9337-8928282ca678",
@@ -238,16 +246,18 @@
           "height": 60
         },
         "position": {
-          "x": 227.60416360622511,
-          "y": 271.72063563366316
+          "x": 600,
+          "y": 300
         },
-        "z": 2,
+        "z": 3,
         "parent": "709d614a-7430-4c7a-9bde-aae66e1613f8",
         "embeds": [],
         "isassociatedwith": [
           "b26fbac2-20d6-4e0c-b8e7-358ef86f4fa2"
         ],
         "iscontainedinside": [
+          "709d614a-7430-4c7a-9bde-aae66e1613f8",
+          "709d614a-7430-4c7a-9bde-aae66e1613f8",
           "709d614a-7430-4c7a-9bde-aae66e1613f8",
           "709d614a-7430-4c7a-9bde-aae66e1613f8",
           "709d614a-7430-4c7a-9bde-aae66e1613f8",
@@ -296,9 +306,9 @@
         },
         "position": {
           "x": 510,
-          "y": 190
+          "y": 180
         },
-        "z": 0,
+        "z": 1,
         "embeds": []
       },
       "9d346106-6074-4339-96f4-a047c879d654": {
@@ -308,7 +318,7 @@
         "target": {
           "id": "b26fbac2-20d6-4e0c-b8e7-358ef86f4fa2"
         },
-        "z": 0
+        "z": 1
       },
       "7024b6ce-e59a-420e-9793-5f6a6c2f3cef": {
         "source": {
@@ -317,7 +327,7 @@
         "target": {
           "id": "116f1afc-ea1e-4b23-b290-a0a0c1aec9c8"
         },
-        "z": 1
+        "z": 2
       },
       "9fb10b3a-4404-4e7e-9c1e-87d373890004": {
         "size": {
@@ -325,24 +335,30 @@
           "height": 60
         },
         "position": {
-          "x": -250.272515220895,
-          "y": 113.7498986429105
+          "x": 240,
+          "y": 120
         },
-        "z": 0,
+        "z": 1,
         "embeds": [],
         "dependson": [
           "709d614a-7430-4c7a-9bde-aae66e1613f8",
           "0245b503-f5ff-460c-ba04-30d7343f897c"
         ]
       },
-      "0db8e0e4-3aba-400d-92eb-7497ff60417c": {
-        "source": {
-          "id": "9fb10b3a-4404-4e7e-9c1e-87d373890004"
+      "0238d251-6aa5-4021-8f6e-11a117817b28": {
+        "size": {
+          "width": 60,
+          "height": 60
         },
-        "target": {
-          "id": "0245b503-f5ff-460c-ba04-30d7343f897c"
+        "position": {
+          "x": 60,
+          "y": 780
         },
-        "z": 3
+        "z": 1,
+        "embeds": [],
+        "isassociatedwith": [
+          "55bb07d9-c2f7-4857-89cf-e5d3ffbc8a92"
+        ]
       }
     }
   },
@@ -540,7 +556,7 @@
         }
       }
     },
-    "EC2VPCG3UVV9": {
+    "LaneRandoGWA": {
       "Type": "AWS::EC2::VPCGatewayAttachment",
       "Properties": {
         "InternetGatewayId": {
@@ -564,7 +580,7 @@
         }
       },
       "DependsOn": [
-        "EC2VPCG3UVV9"
+        "LaneRandoGWA"
       ],
       "Properties": {
         "RouteTableId": {
@@ -598,15 +614,20 @@
         "Name": "lane-rando.net",
         "HostedZoneId": "Z04837761VCK9AI406DF3",
         "Comment": "Lane Rando's record set.",
-        "ResourceRecords": [
-          {
+        "AliasTarget": {
+          "HostedZoneId": {
             "Fn::GetAtt": [
-              "LaneRandoEC2",
-              "PublicIp"
+              "LaneRandoLB",
+              "CanonicalHostedZoneNameID"
+            ]
+          },
+          "DNSName": {
+            "Fn::GetAtt": [
+              "LaneRandoLB",
+              "DNSName"
             ]
           }
-        ],
-        "TTL": "300",
+        },
         "Type": "A"
       },
       "Metadata": {
@@ -618,6 +639,46 @@
         "LaneRandoRT",
         "PublicRoute"
       ]
+    },
+    "LaneRandoLB": {
+      "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+      "Properties": {
+        "Subnets": [
+          {
+            "Ref": "LaneRandoSubnet"
+          }
+        ],
+        "Instances": [
+          {
+            "Ref": "LaneRandoEC2"
+          }
+        ],
+        "Listeners": [
+          {
+            "LoadBalancerPort": "80",
+            "InstancePort": "80",
+            "Protocol": "HTTP"
+          },
+          {
+            "LoadBalancerPort": "443",
+            "InstancePort": "80",
+            "Protocol": "HTTPS",
+            "SSLCertificateId": "arn:aws:acm:us-west-1:816923827429:certificate/76711a8b-3d3a-4c2b-8642-e3a9b2aab975"
+          }
+        ],
+        "HealthCheck": {
+          "Target": "HTTP:80/",
+          "HealthyThreshold": "3",
+          "UnhealthyThreshold": "5",
+          "Interval": "30",
+          "Timeout": "5"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "0238d251-6aa5-4021-8f6e-11a117817b28"
+        }
+      }
     }
   },
   "Parameters": {

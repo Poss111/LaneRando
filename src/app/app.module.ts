@@ -8,6 +8,7 @@ import { EntryComponent } from './components/entry/entry.component';
 import {FormsModule} from '@angular/forms';
 import { NameSuggestionComponent } from './components/name-suggestion/name-suggestion.component';
 import { WhatsNewComponent } from './components/whats-new/whats-new.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WhatsNewComponent } from './components/whats-new/whats-new.component';
     RandomPickComponent,
     EntryComponent,
     NameSuggestionComponent,
-    WhatsNewComponent
+    WhatsNewComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,

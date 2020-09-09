@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as cloneDeep from 'lodash/cloneDeep';
-import { NamesService } from '../../names.service';
+import { NamesService } from '../../services/names.service';
 import { Router } from '@angular/router';
 
 @Component({

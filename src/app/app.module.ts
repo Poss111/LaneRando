@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import { NameSuggestionComponent } from './components/name-suggestion/name-suggestion.component';
 import { WhatsNewComponent } from './components/whats-new/whats-new.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

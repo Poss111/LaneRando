@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {NamesService} from '../../names.service';
+import {NamesService} from '../../services/names.service';
+import {LeagueVersionsService} from '../../services/league-versions.service';
 
 @Component({
   selector: 'app-entry',
@@ -18,11 +19,14 @@ export class EntryComponent implements OnInit {
   setOfNames: string[];
 
   constructor(
-    private route: ActivatedRoute, private nameService: NamesService) {
+    private route: ActivatedRoute, private nameService: NamesService, private leagueVersionsService: LeagueVersionsService) {
   }
 
   ngOnInit(): void {
     this.setOfNames = Array.from(this.nameService.retrieveSetOfNames());
+    this.leagueVersionsService.getLeagueVersions().subscribe((value) => {
+      console.log(value);
+    });
   }
 
   clicked(): void {

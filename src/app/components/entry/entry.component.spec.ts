@@ -5,6 +5,7 @@ import {NO_ERRORS_SCHEMA} from 'src/node_modules/@angular/core';
 import {RouterTestingModule} from 'src/node_modules/@angular/router/testing';
 import {routes} from 'src/src/app/app-routing.module';
 import {RandomPickComponent} from 'src/src/app/components/random-pick/random-pick.component';
+import {HttpClientTestingModule} from 'src/node_modules/@angular/common/http/testing';
 
 describe('EntryComponent', () => {
   let component: EntryComponent;
@@ -12,7 +13,7 @@ describe('EntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes) ],
+      imports: [RouterTestingModule.withRoutes(routes), HttpClientTestingModule],
       declarations: [ EntryComponent, RandomPickComponent ],
       schemas: [NO_ERRORS_SCHEMA]
     })
